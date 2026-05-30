@@ -367,3 +367,13 @@ body{
 html{
     scroll-behavior: smooth;
 }
+
+.active{
+    color: #38bdf8 !important;
+    font-weight: 600;
+}
+
+.btn{
+    text-decoration: none;
+    display: inline-block;
+}
