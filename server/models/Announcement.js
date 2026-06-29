@@ -1,0 +1,22 @@
+const mongoose = require('mongoose');
+
+const announcementSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true },
+  content: { type: String, required: true },
+  category: {
+    type: String,
+    enum: ['general', 'academic', 'event', 'placement', 'exam'],
+    default: 'general',
+  },
+  priority: { type: String, enum: ['low', 'medium', 'high'], default: 'medium' },
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  targetAudience: {
+    type: [String],
+    enum: ['student', 'parent', 'all'],
+    default: ['all'],
+  },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+});
+
+module.exports = mongoose.model('Announcement', announcementSchema);
