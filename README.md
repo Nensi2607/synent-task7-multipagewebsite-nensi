@@ -126,7 +126,7 @@ From the root folder:
 npm run dev
 
 # OR separately:
-npm run server   # Backend on http://localhost:5000
+npm run server   # Backend on https://campusconnector-backend.onrender.com/api
 npm run client   # Frontend on http://localhost:3000
 ```
 
